@@ -1,8 +1,10 @@
 import uvicorn
 from fastapi import FastAPI
+from api_v1.handlers import router as user_router
 
 
 app = FastAPI()
+app.include_router(user_router)
 
 @app.get("/")
 async def hello_world():
